@@ -93,15 +93,15 @@ export default function Client({ redirectTo, flashStatus, flashMessage }: Client
     if (mode === "signup") {
       return {
         id: "signup",
-        title: "Create account",
-        description: "Start your free account in less than a minute.",
+        title: "Create your Calcify account",
+        description: "Get started organizing and sharing your calculations.",
       };
     }
 
     return {
       id: "signin",
-      title: "Sign in",
-      description: "Use your email and password to continue.",
+      title: "Sign in to Calcify",
+      description: "Welcome back! Access your calculation workspace.",
     };
   }, [mode]);
 
@@ -113,21 +113,20 @@ export default function Client({ redirectTo, flashStatus, flashMessage }: Client
           <div className="relative z-10 flex h-full flex-col justify-between">
             <div className="space-y-4">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/80">
-                Panda Access
+                Calcify
               </p>
               <h1 className="max-w-sm text-4xl font-semibold leading-tight tracking-tight">
-                Launch faster with one workspace for your team.
+                Secure cloud calculations for teams and individuals.
               </h1>
               <p className="max-w-md text-sm text-muted-foreground">
-                Secure auth, polished interface, and a clean onboarding flow built
-                for production teams.
+                Your modern calculation workspace—create, organize, and collaborate on sheets from anywhere.
               </p>
             </div>
 
             <div className="relative overflow-hidden rounded-2xl border border-secondary/70 bg-background/80 p-3 shadow-lg">
               <Image
                 src="/demo-img.jpg"
-                alt="Panda product preview"
+                alt="Calcify product preview"
                 className="h-full w-full rounded-xl object-cover"
                 width={1200}
                 height={900}
@@ -149,7 +148,7 @@ export default function Client({ redirectTo, flashStatus, flashMessage }: Client
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  Sign in
+                  Sign In
                 </button>
                 <button
                   type="button"
@@ -160,7 +159,7 @@ export default function Client({ redirectTo, flashStatus, flashMessage }: Client
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  Sign up
+                  Sign Up
                 </button>
               </div>
 
@@ -215,7 +214,7 @@ export default function Client({ redirectTo, flashStatus, flashMessage }: Client
                   </div>
 
                   <Button type="submit" className="w-full" disabled={isPending}>
-                    {isPending ? "Signing in..." : "Sign in"}
+                    {isPending ? "Signing in..." : "Sign In"}
                   </Button>
                 </form>
               ) : (
@@ -225,11 +224,11 @@ export default function Client({ redirectTo, flashStatus, flashMessage }: Client
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
                       <Label htmlFor="signup-first-name">First name</Label>
-                      <Input id="signup-first-name" name="firstName" placeholder="Chirag" required />
+                      <Input id="signup-first-name" name="firstName" placeholder="Your first name" required />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="signup-last-name">Last name</Label>
-                      <Input id="signup-last-name" name="lastName" placeholder="Dodiya" required />
+                      <Input id="signup-last-name" name="lastName" placeholder="Your last name" required />
                     </div>
                   </div>
 
@@ -268,7 +267,7 @@ export default function Client({ redirectTo, flashStatus, flashMessage }: Client
                   </div>
 
                   <Button type="submit" className="w-full" disabled={isPending}>
-                    {isPending ? "Creating account..." : "Create account"}
+                    {isPending ? "Creating account..." : "Create Account"}
                   </Button>
                 </form>
               )}
