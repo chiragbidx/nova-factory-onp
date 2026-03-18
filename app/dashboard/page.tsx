@@ -10,13 +10,6 @@ import { users } from "@/lib/db/schema";
 // Keep auth checks and database reads in this file,
 // then pass prepared props into `client.tsx`.
 
-function getGreeting(): string {
-  const hour = new Date().getHours();
-  if (hour < 12) return "Good morning";
-  if (hour < 18) return "Good afternoon";
-  return "Good evening";
-}
-
 export default async function DashboardPage() {
   const session = await getAuthSession();
   if (!session) redirect("/auth#signin");
@@ -31,7 +24,7 @@ export default async function DashboardPage() {
 
   return (
     <Client
-      greeting={getGreeting()}
+      greeting="Welcome to Calcify!"
       firstName={firstName}
     />
   );
