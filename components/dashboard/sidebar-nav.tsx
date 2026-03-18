@@ -4,9 +4,9 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  ChevronDown,
+  Calculator,
+  FilePlus,
   Home,
-  Hammer,
   Settings,
   Users,
 } from "lucide-react";
@@ -25,20 +25,17 @@ type NavItem = {
 
 const sections: { title: string; items: NavItem[] }[] = [
   {
-    title: "Platform",
+    title: "Workspace",
     items: [
-      { label: "Overview", href: "/dashboard", icon: Home },
-      {
-        label: "Feature",
-        href: "/dashboard/feature",
-        icon: Hammer,
-      },
+      { label: "Dashboard", href: "/dashboard", icon: Home },
+      { label: "Calculation Sheets", href: "/dashboard/calculation-sheets", icon: Calculator },
+      { label: "Create Sheet", href: "/dashboard/calculation-sheets/new", icon: FilePlus },
     ],
   },
   {
     title: "Account",
     items: [
-      { label: "Team", href: "/dashboard/team", icon: Users },
+      { label: "Teams", href: "/dashboard/team", icon: Users },
       { label: "Settings", href: "/dashboard/settings", icon: Settings },
     ],
   },
@@ -102,7 +99,9 @@ function NavSection({
     <Collapsible defaultOpen={defaultOpen}>
       <CollapsibleTrigger className="group flex w-full items-center justify-between px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 hover:text-muted-foreground transition-colors">
         {title}
-        <ChevronDown className="size-3.5 transition-transform group-data-[state=closed]:-rotate-90" />
+        <svg className="size-3.5 transition-transform group-data-[state=closed]:-rotate-90" viewBox="0 0 24 24">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" fill="none" fillRule="evenodd"/>
+        </svg>
       </CollapsibleTrigger>
       <CollapsibleContent>
         <div className="mt-1 space-y-0.5">
